@@ -47,6 +47,6 @@ export const mensagens = {
   "Academia + cardio": "Hora do treino! Bora suar a camisa 💪",
   "Banho + comida + descanso": "Banho, comida e descanso — você mereceu.",
   "Projeto / lazer": "Hora do projeto ou de relaxar um pouco, escolha sua.",
-  "Relaxar": "Desacelera. Faltam só 30 minutinhos pra dormir.",
+  "Relaxar": "Desacelera. Faltam só 1 horinha pra dormir.",
   "Dormir": "Hora de dormir. Amanhã tem mais 🌙"
 };
