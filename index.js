@@ -37,6 +37,12 @@ if (VAPID_PUBLIC_KEY && VAPID_PRIVATE_KEY) {
    Se quiser persistência, dá pra trocar por um arquivo JSON depois. */
 const inscricoes = new Map();
 
+/* Rota simples só pra responder "ok" quando o UptimeRobot (ou qualquer coisa)
+   fizer ping na raiz do site, mantendo o servidor acordado no Render. */
+app.get("/", (req, res) => {
+  res.send("ok");
+});
+
 app.get("/vapid-public-key", (req, res) => {
   res.json({ publicKey: VAPID_PUBLIC_KEY });
 });
@@ -57,7 +63,7 @@ app.post("/unsubscribe", (req, res) => {
 /* Rota só de teste: dispara uma notificação na hora, sem esperar o horário real.
    Remova ou proteja com senha depois que terminar de testar. */
 app.post("/test-notification", async (req, res) => {
-  await enviarPush("Minha rotina (teste)", "Se você recebeu isso, o push está funcionando!");
+  await enviarPush("Rotina", "Matheus", "Se você recebeu isso, o push está funcionando!");
   res.json({ ok: true, inscricoesNotificadas: inscricoes.size });
 });
 
