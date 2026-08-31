@@ -61,9 +61,15 @@ app.post("/unsubscribe", (req, res) => {
 });
 
 /* Rota só de teste: dispara uma notificação na hora, sem esperar o horário real.
-   Remova ou proteja com senha depois que terminar de testar. */
+   Protegida por uma senha simples (TEST_SECRET no .env), pra só você poder usar. */
 app.post("/test-notification", async (req, res) => {
-  await enviarPush("Rotina", "Se você recebeu isso, o push está funcionando!");
+  const senhaEnviada = req.headers["x-test-secret"];
+
+  if (senhaEnviada !== process.env.TEST_SECRET) {
+    return res.status(401).json({ ok: false, erro: "Senha incorreta." });
+  }
+
+  await enviarPush("Minha rotina (teste)", "Se você recebeu isso, o push está funcionando!");
   res.json({ ok: true, inscricoesNotificadas: inscricoes.size });
 });
 
