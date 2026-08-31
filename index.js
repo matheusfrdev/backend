@@ -22,7 +22,7 @@ const VAPID_PRIVATE_KEY = process.env.VAPID_PRIVATE_KEY;
 
 if (VAPID_PUBLIC_KEY && VAPID_PRIVATE_KEY) {
   webpush.setVapidDetails(
-    "mailto:seuemail@exemplo.com",
+    "mailto:matheusfrdev@gmail.com",
     VAPID_PUBLIC_KEY,
     VAPID_PRIVATE_KEY
   );
