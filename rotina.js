@@ -36,13 +36,17 @@ export function atividadeAtual(data = new Date()) {
   return -1;
 }
 
-/* Frases das notificações (Etapa 9 do plano original) */
+/* Frases das notificações*/
 export const mensagens = {
-  "Acordar": "Bom dia! Hora de acordar.",
-  "Estudos": "Hora dos estudos.",
-  "Projeto + lanche": "Hora do projeto + lanche.",
-  "Academia + cardio": "Hora da academia + cardio.",
-  "Projeto / lazer": "Hora do projeto / lazer.",
-  "Relaxar": "Hora de relaxar.",
-  "Dormir": "Hora de dormir."
+  "Acordar": "Bom dia! Levanta que o dia começa agora ☀️",
+  "Escola": "Hora da escola. Foco e vai com tudo.",
+  "Almoço + descanso": "Hora de almoçar e recarregar as energias.",
+  "Estudos": "Hora de estudar. 1h de foco total, você consegue.",
+  "Projeto + lanche": "Pausa pro lanche, depois é hora do projeto.",
+  "Se arrumar": "Bora se arrumar, a academia te espera.",
+  "Academia + cardio": "Hora do treino! Bora suar a camisa 💪",
+  "Banho + comida + descanso": "Banho, comida e descanso — você mereceu.",
+  "Projeto / lazer": "Hora do projeto ou de relaxar um pouco, escolha sua.",
+  "Relaxar": "Desacelera. Faltam só 30 minutinhos pra dormir.",
+  "Dormir": "Hora de dormir. Amanhã tem mais 🌙"
 };
