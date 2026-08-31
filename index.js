@@ -54,6 +54,13 @@ app.post("/unsubscribe", (req, res) => {
   res.status(200).json({ ok: true });
 });
 
+/* Rota só de teste: dispara uma notificação na hora, sem esperar o horário real.
+   Remova ou proteja com senha depois que terminar de testar. */
+app.post("/test-notification", async (req, res) => {
+  await enviarPush("Minha rotina (teste)", "Se você recebeu isso, o push está funcionando!");
+  res.json({ ok: true, inscricoesNotificadas: inscricoes.size });
+});
+
 async function enviarPush(titulo, corpo) {
   const payload = JSON.stringify({ title: titulo, body: corpo });
 
