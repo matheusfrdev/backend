@@ -69,7 +69,7 @@ app.post("/test-notification", async (req, res) => {
     return res.status(401).json({ ok: false, erro: "Senha incorreta." });
   }
 
-  await enviarPush("Minha rotina (teste)", "Se você recebeu isso, o push está funcionando!");
+  await enviarPush("Rotina", "se você recebeu isso, o push está funcionando!");
   res.json({ ok: true, inscricoesNotificadas: inscricoes.size });
 });
 
