@@ -63,7 +63,7 @@ app.post("/unsubscribe", (req, res) => {
 /* Rota só de teste: dispara uma notificação na hora, sem esperar o horário real.
    Remova ou proteja com senha depois que terminar de testar. */
 app.post("/test-notification", async (req, res) => {
-  await enviarPush("Rotina", "Matheus", "Se você recebeu isso, o push está funcionando!");
+  await enviarPush("Rotina", "Se você recebeu isso, o push está funcionando!");
   res.json({ ok: true, inscricoesNotificadas: inscricoes.size });
 });
 
